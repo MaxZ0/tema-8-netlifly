@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+/*font-family: 'Ubuntu', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+/*font-family: 'Open Sans', sans-serif;*/
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0%;
+}
+
+p {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: open-sans;
+  src: url(sansation_light.woff);
+}
+
+#map {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+span {
+  padding-right: 16px;
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.dark-blue {
+  color: #1d3557;
+}
+
+.text-white {
+  color: #fafafa;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.letter-spacing-2 {
+  margin-left: 16px;
+}
+
+.nav-text-size {
+  font-size: 16px;
+}
+
+.nav-text-spacing {
+  padding-top: 32px;
+}
+
+.icon-nav {
+  margin: auto 0;
+  height: 16px;
+}
+
+.logo {
+  margin: 2rem;
+}
+
+.background-box {
+  background: #fafafa;
+  width: 223px;
+  height: 100%;
+  margin-left: 48px;
+  border-radius: 8px;
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: block;
+}
+
+.primary-navigation {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.padding-top-text {
+  padding: 6px;
+}
+
+.header-container{
+  background-color: #1d3557; 
+  height: 50px; 
+  padding: 20px; 
+  box-shadow: 2px 2px 5px rgb(2, 2, 2);
+}
+
+/*number css*/
+.primary-navigation a > span [aria-hidden="true"] {
+  font-weight: 700;
+  margin-inline-end: 0.75em;
+}
+
+.logo-space {
+  margin-left: 107px;
+}
+
+.logo-nav-bar {
+  width: 139px;
+  margin-top: 64px;
+  align-items: center;
+}
+
+.icon-nav {
+  width: 22px;
+  height: 22px;
+}
+
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/img/Group\ 1.png);
+  background-size: 100%;
+}
+
+.card-container {
+  background-color: #f0f0f0;
+  margin: 16px 16px 181px 44px;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 8px;
+}
+
+.inner-container {
+  margin: 0px;
+  padding: 7px;
+  border-radius: 7px;
+  width: 287px;
+}
+
+.card-icons {
+  width: 32px;
+  height: 32px;
+}
+
+.margin-z {
+  margin: 0px;
+}
+
+/*so det nav kan stil be there*/
+@media screen and (max-width: 600px) {
+  .primary-navigation {
+    --gap: 2em;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 5% 0 0 30%;
+
+    flex-direction: column;
+    padding: min (30vh, 10rem) 10rem 2em;
+
+    background: #a8dadc;
+    border-radius: 8px;
+
+    transform: translateX(100%);
+    transition: transform 230ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    position: absolute;
+    z-index: 9999;
+    background-color: transparent;
+    background: url("../assets/img/burger.svg");
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 38px;
+    aspect-ratio: 1;
+    top: 2rem;
+    left: 2rem;
+    border: 0;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("../assets/img/Vector.svg");
+  }
+}
+
+.mapboxgl-ctrl-top-right {
+  padding-top: 578px;
+}
+
+.mapboxgl-ctrl-icon{
+  padding-right: 0px;
+}
+
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+  margin: 120px 0 0 32px;
+  float: left;
+}
+
+.directions-control {
+  font: 16px/22px 'open-sans','Open Sans', sans-serif;
+}
+
+.mapboxgl-ctrl-geocoder input[type='text'] {
+  font: 16px/22px 'Ubuntu','Open Sans', sans-serif;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  height: 40px;
+  margin: 0;
+  color: #1d3557;
+  padding: 10px 40px 10px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mapbox-directions-origin .mapbox-form-label {
+  background-color: #1da1f2;
+
+}
+
+.mapbox-form-label {
+  background: hsl(216, 11%, 27%);
+  color: #fff;
+}
+
+.mapbox-directions-profile {
+  border-radius: 3px;
+  margin: 8px 0px;
+  padding: 0px;
+}
+
+.mapbox-directions-profile label:hover {
+  color: #1d3557;
+  background-color: #a0d6f7;
+}
+
+.mapbox-directions-profile label {
+  display: block;
+  border-radius: 0px;
+  padding: 6px 5px;
+  font-size: 16px;
+  color: #1d3557;
+  line-height: 20px;
+  text-align: center;
+  width: 25%;
+  float: left;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  margin: 22px 18px 0 0;
+  float: none;
+}
+
+.mapboxgl-ctrl-group {
+  border-radius: 4px;
+}
+
+.mapboxgl-ctrl-top-left .mapboxgl-ctrl {
+  margin: 600px 0 0 45px;
+  float: left;
+}
